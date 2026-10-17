@@ -555,7 +555,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE A COMPLETE — PHASE B READY
+Status: PHASE B COMPLETE — PHASE C READY
 
 Completed:
 
@@ -572,12 +572,15 @@ Completed:
 - Phase A completed the KEEP / MOVE / DELETE / REWRITE responsibility audit;
 - Phase A specifically audited the managed-worktree policy;
 - Phase A measured accessible Mac and Windows managed-worktree roots and identified replicated Rust `target/` outputs as the dominant material source of the >100 GB footprint;
-- Phase A evidence is persisted at `docs/audit/2026-10-17-phase-a-current-state-audit.md`.
+- Phase A evidence is persisted at `docs/audit/2026-10-17-phase-a-current-state-audit.md`;
+- Phase B examined the principal mature external approaches and representative issue/community failure evidence;
+- Phase B synthesized recurring failure modes and explicit ADOPT / ADAPT / REJECT decisions;
+- Phase B found no mandatory research gap that would materially block Phase C;
+- Phase B evidence is persisted at `docs/research/2026-10-17-phase-b-external-evidence-synthesis.md`.
 
 Not yet completed:
 
-- external evidence synthesis;
-- final invariant set;
+- final invariant set and lightweight operating-model design;
 - Skill implementation;
 - WebCodex Skill refactor;
 - integrated validation;
@@ -597,16 +600,26 @@ Not yet completed:
 10. This public repository stores only minimum necessary, non-secret evidence.
 11. External research keeps recoverable provenance for material design claims, but license review is not a mandatory project phase gate.
 12. Bootstrap completed on the accepted `main` baseline. Phase A was executed on a purpose-named audit branch; its integration PR is the acceptance gate, and once accepted the resulting `main` state is the authoritative Phase A closeout baseline for Phase B.
+13. Standing Skill and harness instructions are recurring inference-time debt; retain only evidence-backed high-value boundaries, current platform semantics, and recurring failure prevention, and re-evaluate them after material model or harness changes.
+14. Proportional rigor is required: trivial and ordinary work must not pay a mandatory full-spec, TDD, worktree, multi-agent, or independent-review tax.
+15. Research-before-build applies to non-trivial, decision-relevant choices where a mature option plausibly exists; it should be repository-first, source-aware, bounded, and skippable rather than universal ceremony.
+16. Plans should normally specify intent, contracts, constraints, dependencies, and acceptance criteria rather than complete implementation bodies or duplicated execution recipes.
+17. Worktrees and multi-agent topology require concrete isolation, concurrency, context-reset, or independence value; task size labels alone are not sufficient justification.
+18. Durable ledgers/state and independent review are conditional mechanisms for recovery, handoff, risk, or material gates rather than mandatory phases for every task.
+19. Knowledge compounding promotes only stable, verified, reusable lessons to the narrowest authoritative surface; observations and run history must not automatically become always-on context.
+20. The generic operating model must not create a second task database or control plane; it composes with repository-owned state and platform-specific control systems.
 
 ## Exact next action
 
-Execute **Phase B — External Evidence Synthesis only**.
+Execute **Phase C — Lightweight Operating Model Design only**.
 
 The next execution should:
 
-1. recover this Phase A closeout from the repository rather than chat history;
-2. research the mature external approaches named in this plan and relevant community feedback;
-3. extract recurring failure modes, useful mechanisms, and meaningful drawbacks;
-4. make evidence-backed ADOPT / ADAPT / REJECT decisions for candidate generic operating-model patterns;
-5. persist Phase B evidence, blockers, authoritative sources, and the next exact action;
-6. stop without creating the final Skill or refactoring `webcodex-project-driver`.
+1. recover the accepted Phase A audit and this Phase B evidence from the repository rather than chat history;
+2. define the exact `agent-operating-model` responsibility boundary and explicit non-goals;
+3. derive the final invariant / guardrail set from the evidence without choosing an arbitrary rule count;
+4. define positive triggers, negative triggers, and co-activation / authority precedence with repository-local instructions and `webcodex-project-driver`;
+5. define implementation acceptance criteria for Phase D;
+6. check the design for unnecessary ceremony, duplicated control planes, and model-hobbling;
+7. persist the Phase C design candidate, blockers, and exact next action;
+8. stop without building the Skill or refactoring `webcodex-project-driver`.
