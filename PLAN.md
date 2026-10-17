@@ -8,6 +8,13 @@ The governing principle is:
 
 > The model owns intelligence; Skills own high-value boundaries, non-obvious platform semantics, and recurring failure prevention.
 
+Project profile:
+
+- this is a single-maintainer, primarily self-use project;
+- optimize for correctness, recoverability, and low ceremony rather than organizational governance theater;
+- do not assume a second human reviewer, change board, compliance process, or collaboration workflow exists;
+- once the user authorizes a bounded objective, do not invent additional approvals or process gates unless repository policy, platform safety, or a material current risk actually requires them.
+
 This project must not recreate a heavy workflow framework such as Superpowers, GSD, Compound Engineering, or Trellis. Those systems may be researched as evidence sources, but their full workflow machinery must not be copied by default.
 
 ## Authoritative repositories
@@ -179,6 +186,22 @@ Potential side effects include:
 
 Therefore this project should extract durable guardrails and failure-prevention ideas from mature frameworks without copying their full operating systems.
 
+### 6. Process self-blocking and invented gates
+
+A workflow can become self-defeating when an agent promotes an optional mechanism into a mandatory gate that the authoritative contract never required.
+
+Observed example in this project:
+
+- Phase B exit criteria did not require independent review;
+- an integration attempt nevertheless blocked itself waiting for an independent reviewer;
+- the extra gate added delay without reducing a contract-defined risk.
+
+Rule:
+
+> A task is blocked only by an explicit user/repository/platform requirement or by a material current risk that must be resolved before safe continuation.
+
+Do not invent reviewers, approvals, PRs, worktrees, ledgers, or other ceremony merely because they might be useful in some projects.
+
 ## Agent operating model scope
 
 The new `agent-operating-model` Skill should prevent high-value recurring failure modes while preserving model autonomy.
@@ -286,22 +309,25 @@ This project must not, without new evidence and explicit justification:
 - force worktree use;
 - teach generic software engineering in detail;
 - enumerate every conceivable scenario;
-- add files, references, scripts, or infrastructure merely for structure.
+- add files, references, scripts, or infrastructure merely for structure;
+- invent approval, reviewer, PR, worktree, or evidence gates that are not required by the user, repository, platform, or a material current risk.
 
 ## Execution policy for this project
 
 One Chat window may own the entire project, but assistant execution must remain bounded.
 
-Each assistant execution may complete at most one bounded package or one phase gate.
+Each assistant execution should own one bounded objective, not an arbitrary number of unrelated phases.
 
-At the end of each bounded package:
+A bounded objective may include tightly coupled low-risk steps needed to finish that same objective — for example a targeted fix, verification, commit, and integration closeout — when doing them together is clearer and safely fits the execution window. Do not chain multiple substantive phases merely because time remains.
+
+At the end of a material bounded objective:
 
 1. verify the result;
-2. persist durable state and evidence in the appropriate repository;
-3. record the exact next action;
-4. stop instead of casually starting the next package.
+2. persist only the durable state/evidence that has recovery, audit, or handoff value;
+3. record the exact next action when future recovery matters;
+4. stop before beginning the next substantive phase.
 
-If repository identity, branch/HEAD, Runner state, authority, or a prior side effect is uncertain, fail closed and reconcile real state before continuing.
+Reconcile uncertainty before continuing when the uncertainty is material to identity, authority, safety, or side effects. Do not turn harmless metadata gaps into blockers.
 
 Chat history is not the long-term project source of truth.
 
@@ -372,33 +398,32 @@ Goal:
 
 Implementation occurs in the independent `youzaizhihuiguan/webcodex-project-driver` repository.
 
-### Phase F — Repository Instruction Contract
+### Phase F — Repository Instruction Contract (conditional)
 
 Goal:
 
-- define a lightweight `AGENTS.md` model;
+- close any repository-instruction gap that remains after Phase C/E;
+- define or refine a lightweight `AGENTS.md` model only if a separate deliverable still has material value;
 - separate stable repository policy from dynamic execution state;
 - avoid mass-updating unrelated repositories without explicit authorization.
 
+If Phase C and the existing repository instructions already resolve this contract, Phase F may be marked NOT NEEDED with a short rationale instead of creating work for its own sake.
+
 ### Phase G — Integrated Adversarial Validation
 
-Validate at least representative cases covering:
+Validate the smallest representative scenario set that covers the distinct high-value failure classes. One scenario may cover multiple bullets; there is no requirement to execute every candidate separately.
 
-- trivial task;
-- ordinary bug fix;
-- unfamiliar technical problem;
-- mature third-party solution exists;
-- large multi-stage task;
-- interrupted execution;
-- uncertain outcome;
-- dirty workspace;
-- multi-agent candidate;
-- worktree-isolation candidate;
-- destructive action;
-- frozen repository rule;
-- too-heavy verification;
-- too-light verification;
-- handoff to fresh context.
+Candidate coverage includes:
+
+- trivial / negative-trigger task;
+- ordinary implementation task;
+- unfamiliar problem where a mature solution may exist;
+- large or interrupted work requiring durable recovery;
+- uncertain outcome or dirty workspace;
+- multi-agent / worktree candidate where topology should remain conditional;
+- destructive or authority-bearing action;
+- repository-local rule / composition case;
+- verification that is intentionally proportional rather than automatically heavy.
 
 Success requires that:
 
@@ -413,12 +438,13 @@ Success requires that:
 
 Goal:
 
-- independent review from a fresh reviewer context that reads the candidate and evidence rather than relying only on the author-side summary;
+- final verification against the accepted design and current repository state;
 - Git evidence;
 - package validation;
 - rollback point;
-- final report;
-- only then decide formal ChatGPT-account installation of the new `agent-operating-model` Skill and update of the existing `webcodex-project-driver` Skill identity.
+- concise final report;
+- independent review only when the user requests it or when a concrete material risk makes independence valuable;
+- then decide formal ChatGPT-account installation of the new `agent-operating-model` Skill and update of the existing `webcodex-project-driver` Skill identity.
 
 ## Phase exit criteria
 
@@ -483,12 +509,13 @@ Phase E is COMPLETE only when:
 
 ### Phase F exit criteria
 
-Phase F is COMPLETE only when:
+Phase F is COMPLETE or NOT NEEDED when:
 
-- the repository instruction contract is defined;
+- any material repository-instruction gap remaining after Phase C/E is resolved;
 - stable repository policy is cleanly separated from dynamic execution state;
-- the model explains how `AGENTS.md`, authoritative plans/state, and Skills compose;
-- no unrelated repository has been mass-modified without separate authorization.
+- composition among `AGENTS.md`, authoritative plans/state, and Skills is sufficiently clear for actual use;
+- no unrelated repository has been mass-modified without separate authorization;
+- if no separate Phase F work is needed, that decision is recorded briefly rather than manufacturing an artifact.
 
 ### Phase G exit criteria
 
@@ -505,7 +532,8 @@ Phase G is COMPLETE only when:
 
 Phase H is COMPLETE only when:
 
-- independent review from a fresh reviewer context has no unresolved mandatory finding;
+- final validation has no unresolved mandatory finding under the actual project contract;
+- any independent review that was explicitly requested or risk-justified has been resolved, but absence of an independent reviewer is not itself a blocker;
 - final Git refs, package validation, and rollback points are recorded;
 - final report identifies authoritative source versions;
 - installation of `agent-operating-model` is treated as a new Skill installation;
@@ -514,13 +542,14 @@ Phase H is COMPLETE only when:
 
 ## Git / branch / PR policy
 
-- Treat `main` as the accepted baseline, not the default workspace for formal implementation.
-- Bootstrap-only governance/documentation may be committed directly while the repository is being initialized.
-- After bootstrap, perform formal research/design/implementation work on purpose-named feature or review branches.
-- Preserve a recoverable commit at material phase boundaries.
-- Use Draft PRs for incomplete multi-commit work when review or cross-window recovery benefits from a durable integration surface.
-- Do not merge to `main`, publish a release, or rewrite protected/default-branch history merely because a phase implementation appears complete. Promotion requires the applicable validation/review gate.
-- Never use a new branch or worktree as ceremony alone; create one only when it materially improves isolation, review, rollback, or integration.
+- Treat `main` as the accepted baseline.
+- Use a purpose-named branch when it materially improves rollback, isolation, or a multi-step change; direct work on `main` is acceptable for small low-risk documentation/governance changes when repository policy permits it.
+- Preserve a recoverable commit at material boundaries.
+- PRs are optional integration/review surfaces, not mandatory phase gates for this single-maintainer self-use project.
+- A verified branch may be merged directly when the user/repository has already authorized the bounded objective and no applicable safety or repository rule requires extra review.
+- Once a bounded objective is authorized, ordinary non-destructive Git operations needed to complete it — such as commit, push, updating an existing PR, or an authorized integration merge — do not each require separate confirmation.
+- Release, history rewrite, destructive cleanup, account installation/update, and other materially irreversible/external effects still require the authority defined by the user/project/platform.
+- Never create a branch, PR, reviewer, or worktree as ceremony alone.
 
 ## Evidence and provenance policy
 
@@ -545,6 +574,8 @@ For implementation evidence, retain enough information to recover:
 Do not convert anecdotal community feedback into universal policy without corroboration or a clear project-specific reason.
 
 Failed formal evidence remains evidence. Do not hide, overwrite, or redefine it merely to produce a PASS.
+
+Evidence should be proportional to consequence. A commit/diff plus a relevant test or verification result is enough for many low-risk changes; do not create a separate evidence document, ledger, review, or integration report when it adds no recovery or decision value.
 
 Because this repository is public, durable evidence must follow minimum-necessary disclosure:
 
@@ -607,11 +638,16 @@ Not yet completed:
 15. Research-before-build applies to non-trivial, decision-relevant choices where a mature option plausibly exists; it should be repository-first, source-aware, bounded, and skippable rather than universal ceremony.
 16. Plans should normally specify intent, contracts, constraints, dependencies, and acceptance criteria rather than complete implementation bodies or duplicated execution recipes.
 17. Worktrees and multi-agent topology require concrete isolation, concurrency, context-reset, or independence value; task size labels alone are not sufficient justification.
-18. Durable plans/ledgers/state and independent review are conditional mechanisms for complex or long-horizon work, recovery, handoff, risk, or material gates rather than mandatory phases for every task. When durable planning is warranted, preserve current progress, decisions/rationale, discoveries/evidence, acceptance state, and recovery/next-action information.
+18. Durable plans/ledgers/state and independent review are conditional mechanisms for complex or long-horizon work, recovery, handoff, risk, or genuinely material gates rather than mandatory phases for every task. In this single-maintainer self-use project, lack of a second reviewer is never a blocker unless the user explicitly requested independent review or a concrete risk justifies it. When durable planning is warranted, preserve current progress, decisions/rationale, discoveries/evidence, acceptance state, and recovery/next-action information.
 19. Knowledge compounding promotes only stable, verified, reusable lessons to the narrowest authoritative surface; observations and run history must not automatically become always-on context.
 20. The generic operating model must not create a second task database or control plane; it composes with repository-owned state and platform-specific control systems.
 21. Repository- and path-specific rules should live at the narrowest authoritative local scope that owns them. The generic operating model should require discovery and respect of applicable local instructions, but exact instruction precedence is host semantics and must not be replaced by a universal hierarchy invented by the Skill.
-22. Phase B integration uses PR #2 as its acceptance gate; the resulting accepted `main` state is the authoritative Phase B closeout baseline for Phase C.
+22. PR #2 is the current Phase B integration surface because it already exists; it is not a precedent that future phases require PRs or independent reviewers. Once the Phase B candidate satisfies its actual exit criteria and current diff verification, it may be merged under the authorized integration objective.
+23. This is a single-maintainer, primarily self-use project. Optimize governance for direct progress, correctness, and recoverability rather than organizational ceremony.
+24. Do not invent process gates. Optional mechanisms become blocking only when required by explicit user/repository/platform policy or by a concrete material risk in the current task.
+25. One assistant execution owns one bounded objective, but may complete tightly coupled remediation, verification, Git persistence, and integration steps for that same objective when doing so is safe and efficient.
+26. PRs, independent reviewers, standalone evidence reports, worktrees, and subagents are conditional tools, not default milestones.
+27. Project-local standing authority may cover routine non-destructive Git operations needed to complete an already-authorized bounded objective; the generic Skill must still treat authority-bearing effects according to the applicable user/repository/platform contract.
 
 ## Exact next action
 
