@@ -596,7 +596,7 @@ Not yet completed:
 9. The reported >100 GB worktree/resource issue requires real Runner-side evidence before final worktree policy is accepted.
 10. This public repository stores only minimum necessary, non-secret evidence.
 11. External research keeps recoverable provenance for material design claims, but license review is not a mandatory project phase gate.
-12. Bootstrap is complete. Formal Phase A work should start from the accepted `main` baseline on a purpose-named branch.
+12. Bootstrap completed on the accepted `main` baseline. Phase A was executed on a purpose-named audit branch; its integration PR is the acceptance gate, and once accepted the resulting `main` state is the authoritative Phase A closeout baseline for Phase B.
 
 ## Exact next action
 
