@@ -19,6 +19,8 @@ Authority rules:
 - This is a single-maintainer, primarily self-use project. Once a bounded objective is authorized, ordinary non-destructive Git steps needed to complete it do not require separate confirmation unless `PLAN.md` or the platform says otherwise.
 - Do not publish, release, rewrite history, perform destructive cleanup, or make other materially irreversible/external changes unless the applicable project policy and authorization permit it.
 - Prefer the least machinery that preserves correctness and recoverability; add isolation or review only when they buy something concrete.
+- Do not replay a completed phase for a local wording/state defect. Use targeted remediation unless new evidence invalidates a material premise.
+- Treat integration as part of an authorized bounded objective when appropriate; do not invent a separate integration phase merely because a branch or PR exists.
 
 Chat history is not the long-term project source of truth.
 
