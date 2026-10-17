@@ -582,7 +582,6 @@ Completed:
 
 Not yet completed:
 
-- Phase B integration into the accepted `main` baseline;
 - final invariant set and lightweight operating-model design;
 - Skill implementation;
 - WebCodex Skill refactor;
@@ -612,16 +611,19 @@ Not yet completed:
 19. Knowledge compounding promotes only stable, verified, reusable lessons to the narrowest authoritative surface; observations and run history must not automatically become always-on context.
 20. The generic operating model must not create a second task database or control plane; it composes with repository-owned state and platform-specific control systems.
 21. Repository- and path-specific rules should live at the narrowest authoritative local scope that owns them. The generic operating model should require discovery and respect of applicable local instructions, but exact instruction precedence is host semantics and must not be replaced by a universal hierarchy invented by the Skill.
+22. Phase B integration uses PR #2 as its acceptance gate; the resulting accepted `main` state is the authoritative Phase B closeout baseline for Phase C.
 
 ## Exact next action
 
-Execute **Phase B Integration Closeout only**.
+Execute **Phase C — Lightweight Operating Model Design only**.
 
 The next execution should:
 
-1. recover `main`, `research/phase-b-external-evidence-20261017`, Phase A evidence, and the supplemented Phase B evidence from the repository rather than chat history;
-2. create a PR from the Phase B research branch to `main`;
-3. perform an independent/read-only review of the complete branch diff against the Phase B contract and evidence/provenance policy;
-4. remediate only mandatory findings, if any, then re-review;
-5. if review passes, merge through the normal PR flow and re-read `main` to confirm `PHASE B COMPLETE — PHASE C READY` plus the Phase B evidence are recoverable from the accepted baseline;
-6. stop without starting Phase C.
+1. recover the accepted Phase A audit and Phase B evidence from `main` rather than chat history;
+2. define the exact `agent-operating-model` responsibility boundary and explicit non-goals;
+3. derive the final invariant / guardrail set from the evidence without choosing an arbitrary rule count;
+4. define positive triggers, negative triggers, and co-activation / authority composition with repository-local instructions and `webcodex-project-driver`, respecting host-specific precedence semantics;
+5. define implementation acceptance criteria for Phase D;
+6. check the design for unnecessary ceremony, duplicated control planes, and model-hobbling;
+7. persist the Phase C design candidate, blockers, and exact next action;
+8. stop without building the Skill or refactoring `webcodex-project-driver`.
