@@ -555,7 +555,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: BOOTSTRAP COMPLETE — PHASE A READY
+Status: PHASE A COMPLETE — PHASE B READY
 
 Completed:
 
@@ -566,11 +566,16 @@ Completed:
 - bounded-turn policy agreed;
 - bootstrap plan independently re-audited;
 - phase exit criteria, Git/PR policy, evidence provenance, trigger/composition requirements, public-repository evidence hygiene, and account-installation boundaries defined;
-- bootstrap governance closed; future formal phase work starts from the accepted `main` baseline and follows the branch policy.
+- bootstrap governance closed;
+- Phase A verified the current Skill Creator requirements;
+- Phase A verified the installed/current `webcodex-project-driver` against its live authoritative source state;
+- Phase A completed the KEEP / MOVE / DELETE / REWRITE responsibility audit;
+- Phase A specifically audited the managed-worktree policy;
+- Phase A measured accessible Mac and Windows managed-worktree roots and identified replicated Rust `target/` outputs as the dominant material source of the >100 GB footprint;
+- Phase A evidence is persisted at `docs/audit/2026-10-17-phase-a-current-state-audit.md`.
 
 Not yet completed:
 
-- Phase A live audit;
 - external evidence synthesis;
 - final invariant set;
 - Skill implementation;
@@ -595,15 +600,13 @@ Not yet completed:
 
 ## Exact next action
 
-Execute **Phase A — Current-State Audit only**.
+Execute **Phase B — External Evidence Synthesis only**.
 
 The next execution should:
 
-1. load the official Skill Creator guidance;
-2. load the currently installed `webcodex-project-driver`;
-3. verify live GitHub / WebCodex / installed-Skill state;
-4. inspect the current `webcodex-project-driver` source and references;
-5. produce a KEEP / MOVE / DELETE / REWRITE responsibility matrix;
-6. audit the current managed-worktree policy;
-7. persist Phase A evidence and the next exact action;
-8. stop without starting Phase B.
+1. recover this Phase A closeout from the repository rather than chat history;
+2. research the mature external approaches named in this plan and relevant community feedback;
+3. extract recurring failure modes, useful mechanisms, and meaningful drawbacks;
+4. make evidence-backed ADOPT / ADAPT / REJECT decisions for candidate generic operating-model patterns;
+5. persist Phase B evidence, blockers, authoritative sources, and the next exact action;
+6. stop without creating the final Skill or refactoring `webcodex-project-driver`.
