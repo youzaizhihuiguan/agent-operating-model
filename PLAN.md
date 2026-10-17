@@ -123,22 +123,14 @@ and `mode="worktree"` can automatically create a managed worktree.
 
 The current `webcodex-project-driver` contains guidance that prefers managed worktrees for substantial write/review work. That policy may be too aggressive.
 
-Before final policy is written, audit the real disk sources and distinguish among:
+Phase A measured the real disk sources on accessible Mac and Windows Runners. The dominant source was replicated Rust `target/` output inside multiple managed worktrees, not Git worktree metadata itself.
 
-- managed worktree checkouts;
-- orphaned worktrees;
-- Rust `target/`;
-- `node_modules`;
-- virtual environments;
-- build outputs;
-- caches;
-- other generated artifacts.
-
-Current design direction, pending audit:
+Accepted design direction:
 
 - default to an existing suitable checkout;
 - create a managed worktree only for real isolation or concurrency requirements;
 - reuse an existing suitable managed worktree when safe;
+- account for build-output amplification, not just Git metadata;
 - define a safe terminal cleanup lifecycle;
 - never equate “substantial work”, “review”, or “long-running work” with an automatic worktree requirement.
 
@@ -266,9 +258,11 @@ Repository-local instructions own repository-specific truth, for example:
 
 The generic Skill should require agents to honor applicable repository instructions without embedding project-specific content into the generic Skill.
 
-## External evidence requirements
+## External evidence baseline
 
-Before finalizing the operating model, research mature projects and community feedback, including where useful:
+Phase B satisfied the external-evidence requirement. Do not reopen broad framework research unless a later design question exposes a specific gap that could materially change the decision.
+
+The completed research covered mature projects and community feedback including:
 
 - obra/superpowers;
 - EveryInc Compound Engineering;
@@ -328,6 +322,8 @@ At the end of a material bounded objective:
 4. stop before beginning the next substantive phase.
 
 Reconcile uncertainty before continuing when the uncertainty is material to identity, authority, safety, or side effects. Do not turn harmless metadata gaps into blockers.
+
+Completed phases stay complete unless new evidence invalidates a material premise. Later corrections should normally be targeted remediation, not a full replay of the phase.
 
 Chat history is not the long-term project source of truth.
 
@@ -505,7 +501,7 @@ Phase E is COMPLETE only when:
 - WebCodex-specific recovery and control guarantees remain intact;
 - managed-worktree selection, reuse, and cleanup policy is evidence-based and validated;
 - the complete updated Skill validates and packages successfully;
-- the implementation commit/branch/PR and evidence are linked back here.
+- the implementation commit and relevant validation evidence are linked back here; record a branch or PR only if one is actually used.
 
 ### Phase F exit criteria
 
@@ -546,6 +542,7 @@ Phase H is COMPLETE only when:
 - Use a purpose-named branch when it materially improves rollback, isolation, or a multi-step change; direct work on `main` is acceptable for small low-risk documentation/governance changes when repository policy permits it.
 - Preserve a recoverable commit at material boundaries.
 - PRs are optional integration/review surfaces, not mandatory phase gates for this single-maintainer self-use project.
+- Integration is normally the final step of an already-authorized bounded objective, not a separate phase that must be invented for every branch.
 - A verified branch may be merged directly when the user/repository has already authorized the bounded objective and no applicable safety or repository rule requires extra review.
 - Once a bounded objective is authorized, ordinary non-destructive Git operations needed to complete it — such as commit, push, updating an existing PR, or an authorized integration merge — do not each require separate confirmation.
 - Release, history rewrite, destructive cleanup, account installation/update, and other materially irreversible/external effects still require the authority defined by the user/project/platform.
@@ -629,10 +626,10 @@ Not yet completed:
 6. Worktree policy is WebCodex-specific and belongs primarily in `webcodex-project-driver`.
 7. Durable project truth belongs in GitHub rather than chat history.
 8. Trigger precision and Skill composition are explicit design/validation requirements; over-triggering is a failure.
-9. The reported >100 GB worktree/resource issue requires real Runner-side evidence before final worktree policy is accepted.
+9. Phase A measured the reported >100 GB worktree/resource issue: replicated Rust `target/` outputs inside managed worktrees were the dominant material source. Final policy should therefore control isolation frequency, reuse, build-output amplification, and safe cleanup.
 10. This public repository stores only minimum necessary, non-secret evidence.
 11. External research keeps recoverable provenance for material design claims, but license review is not a mandatory project phase gate.
-12. Bootstrap completed on the accepted `main` baseline. Phase A was executed on a purpose-named audit branch; its integration PR is the acceptance gate, and once accepted the resulting `main` state is the authoritative Phase A closeout baseline for Phase B.
+12. Bootstrap completed on the accepted `main` baseline. Phase A happened to use audit branch + PR #1 for integration and produced the authoritative Phase A baseline; that historical choice is not a general requirement for later phases.
 13. Standing instruction surfaces carry recurring routing/context cost: Skill metadata participates in discovery while the full body/resources are loaded on activation. Keep the trigger surface and activated core compact, defer detail through progressive loading, retain only evidence-backed high-value boundaries/current platform semantics/recurring failure prevention, and re-evaluate them after material model or harness changes.
 14. Proportional rigor is required: trivial and ordinary work must not pay a mandatory full-spec, TDD, worktree, multi-agent, or independent-review tax.
 15. Research-before-build applies to non-trivial, decision-relevant choices where a mature option plausibly exists; it should be repository-first, source-aware, bounded, and skippable rather than universal ceremony.
@@ -648,10 +645,11 @@ Not yet completed:
 25. One assistant execution owns one bounded objective, but may complete tightly coupled remediation, verification, Git persistence, and integration steps for that same objective when doing so is safe and efficient.
 26. PRs, independent reviewers, standalone evidence reports, worktrees, and subagents are conditional tools, not default milestones.
 27. Project-local standing authority may cover routine non-destructive Git operations needed to complete an already-authorized bounded objective; the generic Skill must still treat authority-bearing effects according to the applicable user/repository/platform contract.
+28. Do not replay a completed phase merely because a later wording/state issue is found. Use targeted remediation unless new evidence invalidates a material premise of that phase.
 
 ## Exact next action
 
-Execute **Phase C — Lightweight Operating Model Design only**.
+After the current Phase B candidate is integrated into `main`, execute **Phase C — Lightweight Operating Model Design only**.
 
 The next execution should:
 
