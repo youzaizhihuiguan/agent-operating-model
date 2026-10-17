@@ -316,7 +316,8 @@ Goal:
 - verify live GitHub/WebCodex/account state;
 - audit current responsibilities;
 - classify content as KEEP / MOVE / DELETE / REWRITE;
-- inspect current Git/worktree policy.
+- inspect current Git/worktree policy;
+- inspect actual worktree-related disk/resource usage on the relevant Mac/Windows Runners when accessible, distinguishing managed worktrees from build outputs, dependency trees, caches, and other generated data.
 
 Constraint:
 
@@ -346,17 +347,19 @@ Goal:
 - derive invariants from evidence and real failure modes;
 - define explicit non-goals;
 - check that the design does not over-constrain strong models;
-- define boundaries with repository instructions and `webcodex-project-driver`.
+- define boundaries with repository instructions and `webcodex-project-driver`;
+- define the Skill trigger/composition contract, including positive triggers, negative triggers, co-activation with `webcodex-project-driver`, and authority precedence.
 
 ### Phase D — Build Agent Operating Model Skill
 
 Goal:
 
-- initialize and implement the Skill using the official Skill structure;
+- initialize the new Skill with the official Skill Creator flow and required structure;
 - keep `SKILL.md` compact;
+- include required `agents/openai.yaml`;
 - add references/scripts only when they materially improve reliability;
-- validate triggering and behavior;
-- package and validate the complete Skill.
+- validate positive triggers, negative triggers, composition behavior, and representative task behavior;
+- package and validate the complete Skill as `skill.zip` within the platform size limit.
 
 ### Phase E — Slim WebCodex Project Driver
 
@@ -410,12 +413,12 @@ Success requires that:
 
 Goal:
 
-- independent review;
+- independent review from a fresh reviewer context that reads the candidate and evidence rather than relying only on the author-side summary;
 - Git evidence;
 - package validation;
 - rollback point;
 - final report;
-- only then decide formal ChatGPT-account Skill installation/update.
+- only then decide formal ChatGPT-account installation of the new `agent-operating-model` Skill and update of the existing `webcodex-project-driver` Skill identity.
 
 ## Phase exit criteria
 
@@ -428,6 +431,7 @@ Phase A is COMPLETE only when:
 - the live installed/current `webcodex-project-driver` and its authoritative source state have been verified;
 - current responsibilities are classified as KEEP / MOVE / DELETE / REWRITE;
 - current managed-worktree guidance has been specifically audited;
+- actual worktree-related disk/resource usage on the relevant accessible Runners has been measured sufficiently to identify the material sources of the reported >100 GB footprint, or the phase is explicitly BLOCKED on unavailable Runner evidence rather than guessing;
 - discrepancies between chat assumptions and real repository/runtime/account state are resolved;
 - audit evidence and the exact next action are persisted;
 - no implementation mutation has been made.
@@ -452,6 +456,7 @@ Phase C is COMPLETE only when:
 - overlap with repository-local instructions and `webcodex-project-driver` is resolved;
 - the design has been checked for unnecessary ceremony or over-constraint;
 - implementation acceptance criteria are explicit;
+- positive/negative trigger behavior and Skill-composition expectations are explicit;
 - the design candidate and exact next action are persisted.
 
 ### Phase D exit criteria
@@ -461,8 +466,8 @@ Phase D is COMPLETE only when:
 - the official Skill structure is valid;
 - the Skill implementation matches the accepted Phase C design;
 - unnecessary example/resources files have been removed;
-- trigger and representative behavior tests pass;
-- the complete Skill validates and packages successfully;
+- positive-trigger, negative-trigger, composition, and representative behavior tests pass;
+- the complete Skill validates and packages successfully as `skill.zip`;
 - a recoverable Git commit identifies the accepted candidate.
 
 ### Phase E exit criteria
@@ -500,9 +505,11 @@ Phase G is COMPLETE only when:
 
 Phase H is COMPLETE only when:
 
-- independent review has no unresolved mandatory finding;
+- independent review from a fresh reviewer context has no unresolved mandatory finding;
 - final Git refs, package validation, and rollback points are recorded;
 - final report identifies authoritative source versions;
+- installation of `agent-operating-model` is treated as a new Skill installation;
+- `webcodex-project-driver` is updated in its existing Skill identity rather than creating a duplicate;
 - any ChatGPT-account installation/update is either completed and verified or explicitly left as a separate authorized action.
 
 ## Git / branch / PR policy
@@ -539,9 +546,16 @@ Do not convert anecdotal community feedback into universal policy without corrob
 
 Failed formal evidence remains evidence. Do not hide, overwrite, or redefine it merely to produce a PASS.
 
+Because this repository is public, durable evidence must follow minimum-necessary disclosure:
+
+- never commit credentials, access tokens, cookies, passwords, private keys, raw authentication material, or other secrets;
+- do not commit unnecessary personal identifiers or sensitive local-environment data;
+- redact or summarize sensitive runtime identifiers and paths when exact disclosure is not needed for reproduction or audit;
+- preserve enough evidence to verify the claim without dumping entire private runtime state.
+
 ## Current state
 
-Status: PROJECT BOOTSTRAP
+Status: BOOTSTRAP COMPLETE — PHASE A READY
 
 Completed:
 
@@ -549,7 +563,10 @@ Completed:
 - new Skill renamed from the working title `project-agent-discipline` to `agent-operating-model`;
 - authoritative repository selected: `youzaizhihuiguan/agent-operating-model`;
 - high-level architecture and major known problems captured;
-- bounded-turn policy agreed.
+- bounded-turn policy agreed;
+- bootstrap plan independently re-audited;
+- phase exit criteria, Git/PR policy, evidence provenance, trigger/composition requirements, public-repository evidence hygiene, and account-installation boundaries defined;
+- bootstrap governance closed; future formal phase work starts from the accepted `main` baseline and follows the branch policy.
 
 Not yet completed:
 
@@ -570,6 +587,11 @@ Not yet completed:
 5. The final Skill should be as complete as justified by evidence while staying lightweight.
 6. Worktree policy is WebCodex-specific and belongs primarily in `webcodex-project-driver`.
 7. Durable project truth belongs in GitHub rather than chat history.
+8. Trigger precision and Skill composition are explicit design/validation requirements; over-triggering is a failure.
+9. The reported >100 GB worktree/resource issue requires real Runner-side evidence before final worktree policy is accepted.
+10. This public repository stores only minimum necessary, non-secret evidence.
+11. External research keeps recoverable provenance for material design claims, but license review is not a mandatory project phase gate.
+12. Bootstrap is complete. Formal Phase A work should start from the accepted `main` baseline on a purpose-named branch.
 
 ## Exact next action
 
