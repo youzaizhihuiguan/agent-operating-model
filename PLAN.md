@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE B COMPLETE — PHASE C READY
+Status: PHASE C COMPLETE — PHASE D READY
 
 Completed:
 
@@ -607,11 +607,13 @@ Completed:
 - Phase B evidence is persisted at `docs/research/2026-10-17-phase-b-external-evidence-synthesis.md`;
 - Phase B targeted supplement added current first-party OpenAI / GitHub / Anthropic evidence and corrected Superpowers, GSD, Trellis, and Compound Engineering upstream status without changing any ADOPT / ADAPT / REJECT classification;
 - the supplemented Phase B evidence still has no mandatory research gap that would materially change Phase C;
-- Phase B was integrated into `main` through PR #2, and the accepted Phase B evidence/governance is now part of the authoritative baseline for Phase C.
+- Phase B was integrated into `main` through PR #2, and the accepted Phase B evidence/governance is now part of the authoritative baseline for Phase C;
+- Phase C defined the `agent-operating-model` responsibility boundary, explicit non-goals, nine evidence-derived guardrails, positive/negative trigger contract, repository/domain/WebCodex composition contract, anti-ceremony checks, and Phase D implementation acceptance criteria;
+- Phase C design is persisted at `docs/design/2026-10-17-phase-c-lightweight-operating-model-design.md`;
+- Phase C found no blocker that would materially prevent Phase D.
 
 Not yet completed:
 
-- final invariant set and lightweight operating-model design;
 - Skill implementation;
 - WebCodex Skill refactor;
 - integrated validation;
@@ -647,18 +649,23 @@ Not yet completed:
 26. PRs, independent reviewers, standalone evidence reports, worktrees, and subagents are conditional tools, not default milestones.
 27. Project-local standing authority may cover routine non-destructive Git operations needed to complete an already-authorized bounded objective; the generic Skill must still treat authority-bearing effects according to the applicable user/repository/platform contract.
 28. Do not replay a completed phase merely because a later wording/state issue is found. Use targeted remediation unless new evidence invalidates a material premise of that phase.
+29. Phase C consolidates the generic operating model into nine decision guardrails, not a nine-step workflow: authority/current state, bounded objective/no invented gates, bounded search/reuse, proportional machinery, uncertain-outcome reconciliation, diagnosis/verification, conditional durable recovery, material-mutation authority, and ownership/composition.
+30. The generic Skill may co-activate with repository instructions, domain Skills, and `webcodex-project-driver`, but it must not duplicate their owned specifics or invent a universal host precedence hierarchy.
+31. Phase D should start from a minimal package shape — `SKILL.md` plus `agents/openai.yaml` — and add references/scripts/assets only if implementation evidence shows they materially improve reliability or context efficiency.
 
 ## Exact next action
 
-Execute **Phase C — Lightweight Operating Model Design only**.
+Execute **Phase D — Build Agent Operating Model Skill only**.
 
 The next execution should:
 
-1. recover the accepted Phase A audit and Phase B evidence from `main` rather than chat history;
-2. define the exact `agent-operating-model` responsibility boundary and explicit non-goals;
-3. derive the final invariant / guardrail set from the evidence without choosing an arbitrary rule count;
-4. define positive triggers, negative triggers, and co-activation / authority composition with repository-local instructions and `webcodex-project-driver`, respecting host-specific precedence semantics;
-5. define implementation acceptance criteria for Phase D;
-6. check the design for unnecessary ceremony, duplicated control planes, and model-hobbling;
-7. persist the Phase C design candidate, blockers, and exact next action;
-8. stop without building the Skill or refactoring `webcodex-project-driver`.
+1. recover the accepted Phase C design from `main` rather than chat history;
+2. use the official Skill Creator flow to initialize `agent-operating-model`;
+3. implement the accepted trigger contract, nine guardrails, non-goals, and composition boundary in a compact `SKILL.md`;
+4. add required `agents/openai.yaml`;
+5. avoid scripts/references/assets unless they are demonstrably needed;
+6. validate positive triggers, negative triggers, boundary cases, WebCodex/domain composition, and representative behavior from the Phase C acceptance criteria;
+7. remove unused generated template files;
+8. validate and package the complete Skill as `skill.zip`;
+9. persist the accepted Phase D candidate and exact next action;
+10. stop without modifying `webcodex-project-driver`.
