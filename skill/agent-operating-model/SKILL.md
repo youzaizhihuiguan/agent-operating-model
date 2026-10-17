@@ -1,6 +1,6 @@
 ---
 name: agent-operating-model
-description: Generic guardrails for non-trivial, stateful, multi-step project or technical work. Use when ChatGPT must preserve authoritative project state, keep a bounded objective, choose between reuse and custom construction, recover from interruption or uncertain side effects, verify material outcomes, or decide how much process/tooling is actually needed; also use when work risks over-processing through unnecessary plans, worktrees, subagents, reviewers, PRs, or ledgers. Do not use for trivial one-shot questions or edits, pure explanation/writing/tutoring, or domain work without a material cross-cutting authority, recovery, mutation, or execution-discipline concern.
+description: Generic guardrails for non-trivial, stateful, multi-step project or technical work. Use when ChatGPT must preserve authoritative project state, keep work both objective-bounded and execution-sized, choose and present mature reuse options before substantial custom construction, recover from interruption or uncertain side effects, verify material outcomes, or decide how much process/tooling is actually needed; also use when work risks over-processing through unnecessary plans, worktrees, subagents, reviewers, PRs, or ledgers. Do not use for trivial one-shot questions or edits, pure explanation/writing/tutoring, or domain work without a material cross-cutting authority, recovery, mutation, or execution-discipline concern.
 ---
 
 # Agent Operating Model
@@ -15,21 +15,25 @@ Before a material action, use the current authoritative source that actually gov
 
 Resolve only the repository/project state, instruction scope, acceptance contract, or authority needed for the next meaningful decision. Do not turn harmless missing metadata into a blocker.
 
-### 2. Keep one bounded objective; do not invent work or gates
+### 2. Keep one bounded objective and an execution-sized slice; do not invent work or gates
 
 Center the execution on one bounded objective. Complete tightly coupled remediation, verification, persistence, and integration needed to close that objective when doing so is safe.
 
-Do not silently add new scope, acceptance criteria, approvals, reviewers, worktrees, PRs, ledgers, experiments, or unrelated follow-on phases. Optional machinery becomes blocking only when required by the user, repository, platform, or a concrete material risk.
+A bounded objective can still be too large for one assistant execution. Before entering a long chain of dependent steps, choose the next **execution slice** that can finish with an observable result, proportional verification, and a recoverable handoff. If the larger objective contains multiple independently verifiable slices, complete the current slice, persist the minimum recovery state and exact next action, then stop. Do not keep chaining work merely because later steps belong to the same objective.
 
-### 3. Search and reuse before non-trivial custom construction
+Do not mechanically micro-slice work that can safely finish in the current execution. Do not silently add new scope, acceptance criteria, approvals, reviewers, worktrees, PRs, ledgers, experiments, or unrelated follow-on phases. Optional machinery becomes blocking only when required by the user, repository, platform, or a concrete material risk.
 
-Before substantial custom construction, investigate existing repository code, installed capabilities, official platform features, and mature maintained solutions when one could plausibly satisfy the need.
+### 3. Search, select, and present before non-trivial custom construction
+
+Before substantial custom construction, installation, or experimentation, investigate existing repository code, installed capabilities, official platform features, and mature maintained solutions when one could plausibly satisfy the need.
 
 Prefer, when appropriate:
 
 `Adopt -> Extend -> Compose -> Build`
 
-Stop researching when more search is unlikely to change the next decision. Do not impose research ceremony on trivial or already-settled work.
+For an unfamiliar or non-trivial problem where a mature solution plausibly exists and the solution choice is not already settled, **separate solution selection from implementation**. First present the user with the material options, the recommended solution, the reason for that recommendation, and the intended implementation approach. Stop before substantial mutation or experimentation so the user sees the solution choice before work begins.
+
+Skip that handoff when the user has already accepted the solution in the current conversation or an authoritative project instruction, or when the work is trivial and the choice is obvious. Stop researching when more search is unlikely to change the next decision.
 
 ### 4. Use proportional rigor and the least machinery
 
@@ -89,6 +93,6 @@ When WebCodex is the execution platform, `webcodex-project-driver` owns exact Pr
 
 Do not narrate or execute the nine guardrails as a fixed sequence. Apply only the checks relevant to the next decision.
 
-Continue automatically while objective and authority remain clear and the next steps are ordinary, non-destructive parts of the authorized work. Stop only at a real decision boundary such as materially ambiguous scope, missing authority, an unresolved risk that the contract requires resolving, or an irreversible/destructive action not already authorized.
+Continue automatically while objective and authority remain clear and the current execution slice can still finish cleanly. Stop at a real decision boundary such as materially ambiguous scope, missing authority, an unresolved risk that the contract requires resolving, or an irreversible/destructive action not already authorized. Also stop after a required solution-selection handoff or after completing an execution slice whose larger objective still has independently verifiable work remaining.
 
 Keep outputs concise unless the task itself requires durable evidence or a handoff. Do not manufacture process artifacts merely to prove that this Skill was used.
