@@ -104,7 +104,7 @@ Observed consequences include:
 - difficult recovery;
 - completed and incomplete work becoming mixed.
 
-Large projects may remain in one Chat window, but one assistant execution should normally advance only one bounded package or one phase gate.
+Large projects may remain in one Chat window, but one assistant execution should normally own one bounded objective. Tightly coupled low-risk closure steps for that same objective may be completed together; unrelated substantive phases should not be chained merely because time remains.
 
 The purpose is recoverability, not mechanical micro-tasking.
 
@@ -591,7 +591,7 @@ Completed:
 - new Skill renamed from the working title `project-agent-discipline` to `agent-operating-model`;
 - authoritative repository selected: `youzaizhihuiguan/agent-operating-model`;
 - high-level architecture and major known problems captured;
-- bounded-turn policy agreed;
+- bounded-objective execution policy agreed;
 - bootstrap plan independently re-audited;
 - phase exit criteria, Git/PR policy, evidence provenance, trigger/composition requirements, public-repository evidence hygiene, and account-installation boundaries defined;
 - bootstrap governance closed;
@@ -606,7 +606,8 @@ Completed:
 - Phase B found no mandatory research gap that would materially block Phase C;
 - Phase B evidence is persisted at `docs/research/2026-10-17-phase-b-external-evidence-synthesis.md`;
 - Phase B targeted supplement added current first-party OpenAI / GitHub / Anthropic evidence and corrected Superpowers, GSD, Trellis, and Compound Engineering upstream status without changing any ADOPT / ADAPT / REJECT classification;
-- the supplemented Phase B evidence still has no mandatory research gap that would materially change Phase C.
+- the supplemented Phase B evidence still has no mandatory research gap that would materially change Phase C;
+- Phase B was integrated into `main` through PR #2, and the accepted Phase B evidence/governance is now part of the authoritative baseline for Phase C.
 
 Not yet completed:
 
@@ -639,7 +640,7 @@ Not yet completed:
 19. Knowledge compounding promotes only stable, verified, reusable lessons to the narrowest authoritative surface; observations and run history must not automatically become always-on context.
 20. The generic operating model must not create a second task database or control plane; it composes with repository-owned state and platform-specific control systems.
 21. Repository- and path-specific rules should live at the narrowest authoritative local scope that owns them. The generic operating model should require discovery and respect of applicable local instructions, but exact instruction precedence is host semantics and must not be replaced by a universal hierarchy invented by the Skill.
-22. PR #2 is the current Phase B integration surface because it already exists; it is not a precedent that future phases require PRs or independent reviewers. Once the Phase B candidate satisfies its actual exit criteria and current diff verification, it may be merged under the authorized integration objective.
+22. Phase B was integrated through PR #2 because that integration surface already existed; this is historical provenance, not a precedent that future phases require PRs or independent reviewers.
 23. This is a single-maintainer, primarily self-use project. Optimize governance for direct progress, correctness, and recoverability rather than organizational ceremony.
 24. Do not invent process gates. Optional mechanisms become blocking only when required by explicit user/repository/platform policy or by a concrete material risk in the current task.
 25. One assistant execution owns one bounded objective, but may complete tightly coupled remediation, verification, Git persistence, and integration steps for that same objective when doing so is safe and efficient.
@@ -649,7 +650,7 @@ Not yet completed:
 
 ## Exact next action
 
-After the current Phase B candidate is integrated into `main`, execute **Phase C — Lightweight Operating Model Design only**.
+Execute **Phase C — Lightweight Operating Model Design only**.
 
 The next execution should:
 
