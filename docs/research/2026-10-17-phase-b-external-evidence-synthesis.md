@@ -168,9 +168,9 @@ A current Y Combinator interview with Boris Cherny from the Claude Code team is 
 
 This supports a central project principle:
 
-> A Skill rule is recurring inference-time debt. Keep it only when it encodes a high-value boundary, current platform semantics, or a repeated failure that the model does not reliably avoid on its own.
+> A standing Skill surface has recurring cost in layers: metadata participates in discovery/routing, while the full Skill body and supporting resources consume context when activated. Keep the trigger surface and activated rules compact, and retain detailed standing guidance only when it encodes a high-value boundary, current platform semantics, or a repeated failure that the model does not reliably avoid on its own.
 
-This is not an argument for "no prompts" or "no Skills." It is an argument for **empirical minimalism and periodic deletion tests**.
+This is not an argument for "no prompts" or "no Skills." It is an argument for **empirical minimalism, progressive loading, and periodic deletion/ablation tests**.
 
 ## 5. Community feedback — corroborating, not normative
 
@@ -531,15 +531,8 @@ Therefore Phase B remains:
 
 but the next repository action is integration of the completed Phase B branch before Phase C begins.
 
-## 13. Exact next action
+## 13. Integration handoff
 
-Execute **Phase B Integration Closeout only**.
+Phase B integration is gated through PR #2 from `research/phase-b-external-evidence-20261017` to `main`. This section records the handoff that led to that PR; it is not a standing instruction to recreate or re-run the integration after acceptance.
 
-The next execution should:
-
-1. recover `main`, this Phase B branch, the Phase A evidence, and the supplemented Phase B evidence from the repository;
-2. create a PR from `research/phase-b-external-evidence-20261017` to `main`;
-3. perform an independent/read-only review of the complete branch diff against the Phase B contract and evidence/provenance policy;
-4. if a mandatory finding exists, remediate only that finding and re-review;
-5. if review passes, merge through the normal PR flow and re-read `main` to confirm the Phase B evidence and `PHASE B COMPLETE — PHASE C READY` baseline are recoverable;
-6. stop without starting Phase C.
+Once PR #2 is accepted, the authoritative next action is the one recorded in `PLAN.md`: **Phase C — Lightweight Operating Model Design only**.
