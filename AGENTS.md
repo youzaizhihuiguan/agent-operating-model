@@ -6,7 +6,7 @@ Before stateful work:
 
 1. Read `PLAN.md`.
 2. Verify the live repository state instead of relying on chat memory.
-3. Resume only the recorded current phase and Exact Next Action.
+3. Resume the recorded current phase and Exact Next Action unless the current user explicitly authorizes a different bounded objective. If the user changes the objective, reconcile it with live repository state and persist the accepted change before subsequent stateful execution.
 4. Complete at most one bounded package or one phase gate per assistant execution.
 5. Preserve applicable acceptance criteria and project boundaries.
 6. Persist verified state, evidence, blockers, and the next exact action before ending the execution.
