@@ -417,6 +417,128 @@ Goal:
 - final report;
 - only then decide formal ChatGPT-account Skill installation/update.
 
+## Phase exit criteria
+
+A phase is complete only when its required result and evidence are durable in the authoritative repository. A phase is blocked when a required authority, capability, source, or decision is unavailable and continuing would require guessing, silently changing the contract, or accepting an unapproved material risk.
+
+### Phase A exit criteria
+
+Phase A is COMPLETE only when:
+
+- the live installed/current `webcodex-project-driver` and its authoritative source state have been verified;
+- current responsibilities are classified as KEEP / MOVE / DELETE / REWRITE;
+- current managed-worktree guidance has been specifically audited;
+- discrepancies between chat assumptions and real repository/runtime/account state are resolved;
+- audit evidence and the exact next action are persisted;
+- no implementation mutation has been made.
+
+### Phase B exit criteria
+
+Phase B is COMPLETE only when:
+
+- the principal mature external approaches selected for review have been examined sufficiently to support comparison;
+- recurring failure-mode categories and meaningful community-reported drawbacks are captured;
+- important candidate patterns have an explicit ADOPT / ADAPT / REJECT decision with rationale;
+- sources supporting material design conclusions are recoverable;
+- no known mandatory research gap remains that would materially change the design;
+- the exact next action is persisted.
+
+### Phase C exit criteria
+
+Phase C is COMPLETE only when:
+
+- `agent-operating-model` responsibilities and non-goals are explicit;
+- the invariant/guardrail set is derived from evidence and real failure modes rather than an arbitrary rule count;
+- overlap with repository-local instructions and `webcodex-project-driver` is resolved;
+- the design has been checked for unnecessary ceremony or over-constraint;
+- implementation acceptance criteria are explicit;
+- the design candidate and exact next action are persisted.
+
+### Phase D exit criteria
+
+Phase D is COMPLETE only when:
+
+- the official Skill structure is valid;
+- the Skill implementation matches the accepted Phase C design;
+- unnecessary example/resources files have been removed;
+- trigger and representative behavior tests pass;
+- the complete Skill validates and packages successfully;
+- a recoverable Git commit identifies the accepted candidate.
+
+### Phase E exit criteria
+
+Phase E is COMPLETE only when:
+
+- the `webcodex-project-driver` implementation repository has been modified from verified live state;
+- generic methodology has been removed, moved, or reduced according to the accepted responsibility map;
+- WebCodex-specific recovery and control guarantees remain intact;
+- managed-worktree selection, reuse, and cleanup policy is evidence-based and validated;
+- the complete updated Skill validates and packages successfully;
+- the implementation commit/branch/PR and evidence are linked back here.
+
+### Phase F exit criteria
+
+Phase F is COMPLETE only when:
+
+- the repository instruction contract is defined;
+- stable repository policy is cleanly separated from dynamic execution state;
+- the model explains how `AGENTS.md`, authoritative plans/state, and Skills compose;
+- no unrelated repository has been mass-modified without separate authorization.
+
+### Phase G exit criteria
+
+Phase G is COMPLETE only when:
+
+- representative adversarial scenarios have been executed against the integrated design;
+- simple tasks remain lightweight;
+- required recovery/safety behavior still works;
+- generic and WebCodex-specific Skills do not duplicate or contradict each other;
+- repository-local authority precedence is clear;
+- material findings are either closed or explicitly recorded as blockers.
+
+### Phase H exit criteria
+
+Phase H is COMPLETE only when:
+
+- independent review has no unresolved mandatory finding;
+- final Git refs, package validation, and rollback points are recorded;
+- final report identifies authoritative source versions;
+- any ChatGPT-account installation/update is either completed and verified or explicitly left as a separate authorized action.
+
+## Git / branch / PR policy
+
+- Treat `main` as the accepted baseline, not the default workspace for formal implementation.
+- Bootstrap-only governance/documentation may be committed directly while the repository is being initialized.
+- After bootstrap, perform formal research/design/implementation work on purpose-named feature or review branches.
+- Preserve a recoverable commit at material phase boundaries.
+- Use Draft PRs for incomplete multi-commit work when review or cross-window recovery benefits from a durable integration surface.
+- Do not merge to `main`, publish a release, or rewrite protected/default-branch history merely because a phase implementation appears complete. Promotion requires the applicable validation/review gate.
+- Never use a new branch or worktree as ceremony alone; create one only when it materially improves isolation, review, rollback, or integration.
+
+## Evidence and provenance policy
+
+Material claims that influence architecture, safety, workflow boundaries, or Skill behavior must be traceable.
+
+For external evidence, retain enough information to recover:
+
+- source / project / discussion;
+- the observed failure mode or design mechanism;
+- the relevant conclusion;
+- the ADOPT / ADAPT / REJECT decision and rationale.
+
+For implementation evidence, retain enough information to recover:
+
+- repository and branch;
+- commit or candidate identity;
+- validation/test result;
+- important runtime/environment facts;
+- unresolved blockers;
+- exact next action.
+
+Do not convert anecdotal community feedback into universal policy without corroboration or a clear project-specific reason.
+
+Failed formal evidence remains evidence. Do not hide, overwrite, or redefine it merely to produce a PASS.
+
 ## Current state
 
 Status: PROJECT BOOTSTRAP
