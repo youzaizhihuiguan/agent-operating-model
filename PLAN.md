@@ -637,11 +637,17 @@ Completed:
 - Phase H recorded final source/package/rollback evidence at `docs/validation/2026-10-17-phase-h-final-closeout.md`;
 - Phase H found that ZIP SHA256 is an artifact-instance fence rather than a reproducible source identity because archive timestamps can change while internal file bytes remain identical;
 - Phase H found no unresolved mandatory source/design/validation finding;
-- Phase H did not mutate ChatGPT account Skills: `agent-operating-model` remains uninstalled and the installed `webcodex-project-driver` remains the pre-Phase-E account representation.
+- Phase H did not mutate ChatGPT account Skills: `agent-operating-model` remains uninstalled and the installed `webcodex-project-driver` remains the pre-Phase-E account representation;
+- a post-closeout audit against the user's four original problems found two remaining AOM gaps: mature-solution selection was not guaranteed to be presented before substantial attempts, and a bounded objective could still exceed a reasonable single assistant execution;
+- the targeted post-closeout amendment closes those gaps by requiring a solution-selection handoff before substantial mutation when the solution is not already settled, and by requiring execution-sized independently verifiable slices when a bounded objective is still too large;
+- the amended `agent-operating-model/SKILL.md` Git blob is `b1392ae06fc8f58d0125100d0588100ccd9d1c0c`;
+- targeted amendment validation is persisted at `docs/validation/2026-10-17-post-closeout-search-first-execution-slicing-amendment.md`;
+- the amended concrete package is 3,584 bytes with archive SHA256 `d42b552ab2fb7021d8ca75a7eefc17f1732b73c3f4da6a4636f511d0476fce8d`;
+- this correction does not create a Phase I; the source project remains closed.
 
 Optional external follow-on only:
 
-- separately authorized ChatGPT-account installation of `agent-operating-model` and update of the existing `webcodex-project-driver` identity, followed by installed-surface routing/composition verification, when an account Skill-management interface is available.
+- separately authorized ChatGPT-account installation of the **post-closeout amended** `agent-operating-model` and update of the existing `webcodex-project-driver` identity, followed by installed-surface routing/composition verification, when an account Skill-management interface is available.
 
 ## Current decision record
 
@@ -689,6 +695,9 @@ Optional external follow-on only:
 42. Phase H final revalidation produced `agent-operating-model` archive SHA256 `97b7b763db753ebac6782639e03ceff3bc4fd2f521bac0eab75f0b2a940b720b` (3,133 bytes) and `webcodex-project-driver` archive SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef` (35,961 bytes), both with current Skill Creator validation PASS.
 43. Repository/source rollback points are `3622a5c10ba06154f036074868cdc75f9b0b0326` for the pre-Phase-D Agent Operating Model baseline and `82fd58e65e114a4878ef512c6f90093d1bb4046c` for the pre-Phase-E WebCodex Project Driver baseline.
 44. Phase H closes the source/design/validation project without ChatGPT account mutation. Any later account install/update is a separate explicitly authorized external action, not a new project phase.
+45. For unfamiliar or non-trivial work where a mature solution plausibly exists and the choice is not already settled, solution selection and implementation are separate: search boundedly, present material options/recommendation/reason/intended approach to the user, and stop before substantial mutation or experimentation. Skip this handoff when the solution is already accepted or the work is trivial/obvious.
+46. A bounded objective must also be execution-sized. When one objective contains multiple independently verifiable slices, complete and verify the current slice, persist the minimum recovery state and exact next action, then stop; do not keep chaining later slices merely because they belong to the same objective. Do not mechanically micro-slice work that can safely finish now.
+47. The post-closeout correction is a targeted amendment to the final AOM Skill, not a reopened phase. Current AOM source authority is the amended Git source/blob plus its targeted validation evidence; the Phase H closeout report remains historical evidence for the pre-amendment state.
 
 ## Exact next action
 
@@ -696,7 +705,7 @@ No project phase remains.
 
 The source/design/validation project is closed. The only optional follow-on is a **separately authorized ChatGPT account action** to:
 
-1. install the new `agent-operating-model` Skill from the accepted source/package;
+1. install the post-closeout amended `agent-operating-model` Skill from Git blob `b1392ae06fc8f58d0125100d0588100ccd9d1c0c` / its validated package;
 2. update the existing `webcodex-project-driver` logical Skill identity to the accepted Phase E source;
 3. verify installed identities/content plus representative positive/negative routing and AOM/WPD composition;
 4. preserve the previous installed WPD revision as the account rollback target when the platform exposes revision history.
