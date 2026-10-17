@@ -576,10 +576,13 @@ Completed:
 - Phase B examined the principal mature external approaches and representative issue/community failure evidence;
 - Phase B synthesized recurring failure modes and explicit ADOPT / ADAPT / REJECT decisions;
 - Phase B found no mandatory research gap that would materially block Phase C;
-- Phase B evidence is persisted at `docs/research/2026-10-17-phase-b-external-evidence-synthesis.md`.
+- Phase B evidence is persisted at `docs/research/2026-10-17-phase-b-external-evidence-synthesis.md`;
+- Phase B targeted supplement added current first-party OpenAI / GitHub / Anthropic evidence and corrected Superpowers, GSD, Trellis, and Compound Engineering upstream status without changing any ADOPT / ADAPT / REJECT classification;
+- the supplemented Phase B evidence still has no mandatory research gap that would materially change Phase C.
 
 Not yet completed:
 
+- Phase B integration into the accepted `main` baseline;
 - final invariant set and lightweight operating-model design;
 - Skill implementation;
 - WebCodex Skill refactor;
@@ -600,26 +603,25 @@ Not yet completed:
 10. This public repository stores only minimum necessary, non-secret evidence.
 11. External research keeps recoverable provenance for material design claims, but license review is not a mandatory project phase gate.
 12. Bootstrap completed on the accepted `main` baseline. Phase A was executed on a purpose-named audit branch; its integration PR is the acceptance gate, and once accepted the resulting `main` state is the authoritative Phase A closeout baseline for Phase B.
-13. Standing Skill and harness instructions are recurring inference-time debt; retain only evidence-backed high-value boundaries, current platform semantics, and recurring failure prevention, and re-evaluate them after material model or harness changes.
+13. Standing instruction surfaces carry recurring routing/context cost: Skill metadata participates in discovery while the full body/resources are loaded on activation. Keep the trigger surface and activated core compact, defer detail through progressive loading, retain only evidence-backed high-value boundaries/current platform semantics/recurring failure prevention, and re-evaluate them after material model or harness changes.
 14. Proportional rigor is required: trivial and ordinary work must not pay a mandatory full-spec, TDD, worktree, multi-agent, or independent-review tax.
 15. Research-before-build applies to non-trivial, decision-relevant choices where a mature option plausibly exists; it should be repository-first, source-aware, bounded, and skippable rather than universal ceremony.
 16. Plans should normally specify intent, contracts, constraints, dependencies, and acceptance criteria rather than complete implementation bodies or duplicated execution recipes.
 17. Worktrees and multi-agent topology require concrete isolation, concurrency, context-reset, or independence value; task size labels alone are not sufficient justification.
-18. Durable ledgers/state and independent review are conditional mechanisms for recovery, handoff, risk, or material gates rather than mandatory phases for every task.
+18. Durable plans/ledgers/state and independent review are conditional mechanisms for complex or long-horizon work, recovery, handoff, risk, or material gates rather than mandatory phases for every task. When durable planning is warranted, preserve current progress, decisions/rationale, discoveries/evidence, acceptance state, and recovery/next-action information.
 19. Knowledge compounding promotes only stable, verified, reusable lessons to the narrowest authoritative surface; observations and run history must not automatically become always-on context.
 20. The generic operating model must not create a second task database or control plane; it composes with repository-owned state and platform-specific control systems.
+21. Repository- and path-specific rules should live at the narrowest authoritative local scope that owns them. The generic operating model should require discovery and respect of applicable local instructions, but exact instruction precedence is host semantics and must not be replaced by a universal hierarchy invented by the Skill.
 
 ## Exact next action
 
-Execute **Phase C — Lightweight Operating Model Design only**.
+Execute **Phase B Integration Closeout only**.
 
 The next execution should:
 
-1. recover the accepted Phase A audit and this Phase B evidence from the repository rather than chat history;
-2. define the exact `agent-operating-model` responsibility boundary and explicit non-goals;
-3. derive the final invariant / guardrail set from the evidence without choosing an arbitrary rule count;
-4. define positive triggers, negative triggers, and co-activation / authority precedence with repository-local instructions and `webcodex-project-driver`;
-5. define implementation acceptance criteria for Phase D;
-6. check the design for unnecessary ceremony, duplicated control planes, and model-hobbling;
-7. persist the Phase C design candidate, blockers, and exact next action;
-8. stop without building the Skill or refactoring `webcodex-project-driver`.
+1. recover `main`, `research/phase-b-external-evidence-20261017`, Phase A evidence, and the supplemented Phase B evidence from the repository rather than chat history;
+2. create a PR from the Phase B research branch to `main`;
+3. perform an independent/read-only review of the complete branch diff against the Phase B contract and evidence/provenance policy;
+4. remediate only mandatory findings, if any, then re-review;
+5. if review passes, merge through the normal PR flow and re-read `main` to confirm `PHASE B COMPLETE — PHASE C READY` plus the Phase B evidence are recoverable from the accepted baseline;
+6. stop without starting Phase C.
