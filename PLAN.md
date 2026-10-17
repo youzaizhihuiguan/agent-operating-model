@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE G COMPLETE — PHASE H READY
+Status: PHASE H COMPLETE — SOURCE PROJECT CLOSED; ACCOUNT SKILL MUTATION NOT PERFORMED
 
 Completed:
 
@@ -631,12 +631,17 @@ Completed:
 - Phase G also performed a read-only live WebCodex runtime check: both Runners were online/build-aligned, managed-worktree/instruction capabilities were available, and coding-agent provider readiness was absent, confirming that capability exposure must not be treated as provider readiness;
 - Phase G found no material duplication or contradiction among root repository instructions, `agent-operating-model`, domain ownership, and Phase E `webcodex-project-driver`;
 - Phase G evidence is persisted at `docs/validation/2026-10-17-phase-g-integrated-adversarial-validation.md`;
-- Phase G found no mandatory source remediation and no blocker that would materially prevent Phase H.
+- Phase G found no mandatory source remediation and no blocker that would materially prevent Phase H;
+- Phase H revalidated and repackaged both final Skill sources with the current Skill Creator validator/packager;
+- Phase H confirmed the final `agent-operating-model` source blobs `29fe10d9d6e97f030c7f28a5cb11340cde434076` / `6502c3d76549169b4838f94cfbd2ab41d854256f` and the final Phase E `webcodex-project-driver` source at `0d41a941eb51533f004db60b3dfee33f72a3c0ae`;
+- Phase H recorded final source/package/rollback evidence at `docs/validation/2026-10-17-phase-h-final-closeout.md`;
+- Phase H found that ZIP SHA256 is an artifact-instance fence rather than a reproducible source identity because archive timestamps can change while internal file bytes remain identical;
+- Phase H found no unresolved mandatory source/design/validation finding;
+- Phase H did not mutate ChatGPT account Skills: `agent-operating-model` remains uninstalled and the installed `webcodex-project-driver` remains the pre-Phase-E account representation.
 
-Not yet completed:
+Optional external follow-on only:
 
-- final closeout / package revalidation / rollback-point record;
-- account installation/update decision and, if authorized, installed-surface verification.
+- separately authorized ChatGPT-account installation of `agent-operating-model` and update of the existing `webcodex-project-driver` identity, followed by installed-surface routing/composition verification, when an account Skill-management interface is available.
 
 ## Current decision record
 
@@ -680,18 +685,20 @@ Not yet completed:
 38. Phase G accepted the integrated source composition without remediation: simple tasks remain simple, search/reuse is bounded, worktree/multi-agent topology remains conditional, destructive/release authority stays repository/user-owned, and WebCodex-specific recovery semantics remain intact.
 39. Phase G live-runtime evidence confirms that advertised capabilities are not equivalent to provider readiness; current WebCodex source must continue to discover provider/Host/Runner readiness live rather than inferring from API/tool exposure.
 40. Account-side routing is intentionally still unproven at Phase G because `agent-operating-model` is not yet installed and the installed `webcodex-project-driver` is still the pre-Phase-E account version; this is a Phase H installation/verification concern, not a Phase G failure.
+41. Final reproducibility authority is the Git source commit/blob content, not the ZIP SHA alone. A ZIP SHA identifies one concrete packaged artifact and may change when archive metadata/timestamps change even when internal Skill file bytes are identical.
+42. Phase H final revalidation produced `agent-operating-model` archive SHA256 `97b7b763db753ebac6782639e03ceff3bc4fd2f521bac0eab75f0b2a940b720b` (3,133 bytes) and `webcodex-project-driver` archive SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef` (35,961 bytes), both with current Skill Creator validation PASS.
+43. Repository/source rollback points are `3622a5c10ba06154f036074868cdc75f9b0b0326` for the pre-Phase-D Agent Operating Model baseline and `82fd58e65e114a4878ef512c6f90093d1bb4046c` for the pre-Phase-E WebCodex Project Driver baseline.
+44. Phase H closes the source/design/validation project without ChatGPT account mutation. Any later account install/update is a separate explicitly authorized external action, not a new project phase.
 
 ## Exact next action
 
-Execute **Phase H — Closeout only**.
+No project phase remains.
 
-The next execution should:
+The source/design/validation project is closed. The only optional follow-on is a **separately authorized ChatGPT account action** to:
 
-1. recover both repositories' final authoritative `main` state, accepted Skill sources, Phase D/E/G validation evidence, and package identities from GitHub rather than chat history;
-2. revalidate/package the final `agent-operating-model` and `webcodex-project-driver` sources using the current Skill Creator flow and verify package hashes/contents against repository source;
-3. record final source commits, package hashes, validation status, and rollback points;
-4. verify no unresolved mandatory finding remains under the current project contract;
-5. decide the account-installation outcome: install the new `agent-operating-model` and update the existing `webcodex-project-driver` identity only if that account mutation is explicitly authorized in the current objective;
-6. if installation/update is authorized, verify installed identities/content and representative trigger/composition behavior after the mutation; if not, leave it as an explicit separate authorized action;
-7. persist concise final closeout state/report;
-8. stop without inventing another phase.
+1. install the new `agent-operating-model` Skill from the accepted source/package;
+2. update the existing `webcodex-project-driver` logical Skill identity to the accepted Phase E source;
+3. verify installed identities/content plus representative positive/negative routing and AOM/WPD composition;
+4. preserve the previous installed WPD revision as the account rollback target when the platform exposes revision history.
+
+Do not invent a Phase I or reopen completed source phases merely because account installation has not been performed.
