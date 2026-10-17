@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE F NOT NEEDED — PHASE G READY
+Status: PHASE G COMPLETE — PHASE H READY
 
 Completed:
 
@@ -626,12 +626,17 @@ Completed:
 - root `AGENTS.md` already serves as the short stable repository entrypoint: it directs agents to authoritative `PLAN.md`, requires live-state recovery, bounded execution, acceptance-boundary preservation, low-ceremony Git/process behavior, targeted remediation, and material-effect authority;
 - dynamic project state, current phase, detailed architecture/non-goals, validation criteria, and Exact Next Action remain in `PLAN.md` rather than being duplicated into standing instructions;
 - the accepted `agent-operating-model` and `webcodex-project-driver` composition contracts already assign repository/project truth to local instructions without inventing a universal host precedence hierarchy;
-- Phase F therefore requires no `AGENTS.md` rewrite, nested instruction file, new artifact, or unrelated repository mutation and is recorded as **NOT NEEDED**.
+- Phase F therefore requires no `AGENTS.md` rewrite, nested instruction file, new artifact, or unrelated repository mutation and is recorded as **NOT NEEDED**;
+- Phase G executed six integrated adversarial scenarios covering negative/trivial routing, ordinary bounded repository work, bounded search/reuse, interrupted/outcome-uncertain WebCodex recovery, dirty-workspace/worktree and multi-agent pressure, and material authority boundaries;
+- Phase G also performed a read-only live WebCodex runtime check: both Runners were online/build-aligned, managed-worktree/instruction capabilities were available, and coding-agent provider readiness was absent, confirming that capability exposure must not be treated as provider readiness;
+- Phase G found no material duplication or contradiction among root repository instructions, `agent-operating-model`, domain ownership, and Phase E `webcodex-project-driver`;
+- Phase G evidence is persisted at `docs/validation/2026-10-17-phase-g-integrated-adversarial-validation.md`;
+- Phase G found no mandatory source remediation and no blocker that would materially prevent Phase H.
 
 Not yet completed:
 
-- integrated adversarial validation;
-- account installation/update.
+- final closeout / package revalidation / rollback-point record;
+- account installation/update decision and, if authorized, installed-surface verification.
 
 ## Current decision record
 
@@ -672,18 +677,21 @@ Not yet completed:
 35. The accepted managed-worktree policy is: existing suitable checkout by default; new managed worktree only for concrete isolation/concurrency/preservation value; safe reuse before creation; generated-output amplification treated separately from Git metadata; terminal cleanup only after exact ownership/evidence/ref reconciliation.
 36. The accepted Phase E `webcodex-project-driver` package is identified by SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef` and validation evidence at `youzaizhihuiguan/webcodex-project-driver/docs/benchmark/2026-10-17-v0.3.2-operating-model-split-validation.md`.
 37. Phase F is **NOT NEEDED**: the existing root `AGENTS.md` is already the appropriate lightweight stable repository contract, while `PLAN.md` owns dynamic phase/state/acceptance details; adding another instruction layer would duplicate authority and standing context without closing a material gap.
+38. Phase G accepted the integrated source composition without remediation: simple tasks remain simple, search/reuse is bounded, worktree/multi-agent topology remains conditional, destructive/release authority stays repository/user-owned, and WebCodex-specific recovery semantics remain intact.
+39. Phase G live-runtime evidence confirms that advertised capabilities are not equivalent to provider readiness; current WebCodex source must continue to discover provider/Host/Runner readiness live rather than inferring from API/tool exposure.
+40. Account-side routing is intentionally still unproven at Phase G because `agent-operating-model` is not yet installed and the installed `webcodex-project-driver` is still the pre-Phase-E account version; this is a Phase H installation/verification concern, not a Phase G failure.
 
 ## Exact next action
 
-Execute **Phase G — Integrated Adversarial Validation only**.
+Execute **Phase H — Closeout only**.
 
 The next execution should:
 
-1. recover the accepted `agent-operating-model` candidate, Phase E `webcodex-project-driver` source, root `AGENTS.md`, and current `PLAN.md` from authoritative repositories rather than chat history;
-2. validate the smallest representative scenario set that covers the distinct failure classes already defined by Phase G, allowing one scenario to cover multiple criteria;
-3. include negative/trivial routing, ordinary bounded implementation, bounded search/reuse, interrupted or outcome-uncertain recovery, dirty/workspace state, conditional multi-agent/worktree topology, material authority boundaries, repository-local composition, and intentionally proportional verification;
-4. verify that repository-local authority, generic operating-model guardrails, domain ownership, and WebCodex-specific mechanics compose without duplication or contradiction;
-5. verify simple tasks remain simple and that no planner, worktree, PR, reviewer, subagent, ledger, or heavy evidence artifact is forced without concrete value;
-6. use the accepted source candidates without installing/updating ChatGPT account Skills; account-side installation and routing verification remain reserved for Phase H;
-7. persist Phase G evidence, findings/blockers, and the exact next action;
-8. stop without beginning Phase H.
+1. recover both repositories' final authoritative `main` state, accepted Skill sources, Phase D/E/G validation evidence, and package identities from GitHub rather than chat history;
+2. revalidate/package the final `agent-operating-model` and `webcodex-project-driver` sources using the current Skill Creator flow and verify package hashes/contents against repository source;
+3. record final source commits, package hashes, validation status, and rollback points;
+4. verify no unresolved mandatory finding remains under the current project contract;
+5. decide the account-installation outcome: install the new `agent-operating-model` and update the existing `webcodex-project-driver` identity only if that account mutation is explicitly authorized in the current objective;
+6. if installation/update is authorized, verify installed identities/content and representative trigger/composition behavior after the mutation; if not, leave it as an explicit separate authorized action;
+7. persist concise final closeout state/report;
+8. stop without inventing another phase.
