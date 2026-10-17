@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE E COMPLETE — PHASE F ASSESSMENT READY
+Status: PHASE F NOT NEEDED — PHASE G READY
 
 Completed:
 
@@ -621,11 +621,15 @@ Completed:
 - Phase E rewrote managed-worktree policy to default to an existing suitable checkout, require concrete isolation/concurrency/preservation value for new worktrees, prefer safe reuse, account separately for generated-output amplification, and use Git/WebCodex-aware terminal cleanup;
 - Phase E validation is persisted in the implementation repository at `docs/benchmark/2026-10-17-v0.3.2-operating-model-split-validation.md`;
 - the validated Phase E `webcodex-project-driver` package is 35,961 bytes with SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef`;
-- Phase E found no blocker that would materially prevent the conditional Phase F assessment.
+- Phase E found no blocker that would materially prevent the conditional Phase F assessment;
+- Phase F assessed the repository instruction contract and found **no material remaining gap** after Phase C/E;
+- root `AGENTS.md` already serves as the short stable repository entrypoint: it directs agents to authoritative `PLAN.md`, requires live-state recovery, bounded execution, acceptance-boundary preservation, low-ceremony Git/process behavior, targeted remediation, and material-effect authority;
+- dynamic project state, current phase, detailed architecture/non-goals, validation criteria, and Exact Next Action remain in `PLAN.md` rather than being duplicated into standing instructions;
+- the accepted `agent-operating-model` and `webcodex-project-driver` composition contracts already assign repository/project truth to local instructions without inventing a universal host precedence hierarchy;
+- Phase F therefore requires no `AGENTS.md` rewrite, nested instruction file, new artifact, or unrelated repository mutation and is recorded as **NOT NEEDED**.
 
 Not yet completed:
 
-- repository instruction contract assessment (Phase F, conditional);
 - integrated adversarial validation;
 - account installation/update.
 
@@ -667,16 +671,19 @@ Not yet completed:
 34. Phase E accepted `webcodex-project-driver@0d41a941eb51533f004db60b3dfee33f72a3c0ae` as the repository baseline that composes with `agent-operating-model`; account installation remains unchanged until the later authorized installation stage.
 35. The accepted managed-worktree policy is: existing suitable checkout by default; new managed worktree only for concrete isolation/concurrency/preservation value; safe reuse before creation; generated-output amplification treated separately from Git metadata; terminal cleanup only after exact ownership/evidence/ref reconciliation.
 36. The accepted Phase E `webcodex-project-driver` package is identified by SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef` and validation evidence at `youzaizhihuiguan/webcodex-project-driver/docs/benchmark/2026-10-17-v0.3.2-operating-model-split-validation.md`.
+37. Phase F is **NOT NEEDED**: the existing root `AGENTS.md` is already the appropriate lightweight stable repository contract, while `PLAN.md` owns dynamic phase/state/acceptance details; adding another instruction layer would duplicate authority and standing context without closing a material gap.
 
 ## Exact next action
 
-Execute **Phase F — Repository Instruction Contract assessment only (conditional)**.
+Execute **Phase G — Integrated Adversarial Validation only**.
 
 The next execution should:
 
-1. recover the accepted Phase C ownership/composition design and Phase E `webcodex-project-driver` split from `main`;
-2. inspect the current root `AGENTS.md`, `PLAN.md`, Skill composition contract, and repository-local instruction model for any remaining material gap;
-3. if no separate deliverable has material value, record **Phase F NOT NEEDED** with a short evidence-based rationale instead of manufacturing work;
-4. if a real gap remains, make only the smallest repository-instruction change needed to close it and verify stable policy remains separate from dynamic execution state;
-5. persist the Phase F verdict and exact next action;
-6. stop without starting Phase G integrated adversarial validation or installing/updating any ChatGPT account Skill.
+1. recover the accepted `agent-operating-model` candidate, Phase E `webcodex-project-driver` source, root `AGENTS.md`, and current `PLAN.md` from authoritative repositories rather than chat history;
+2. validate the smallest representative scenario set that covers the distinct failure classes already defined by Phase G, allowing one scenario to cover multiple criteria;
+3. include negative/trivial routing, ordinary bounded implementation, bounded search/reuse, interrupted or outcome-uncertain recovery, dirty/workspace state, conditional multi-agent/worktree topology, material authority boundaries, repository-local composition, and intentionally proportional verification;
+4. verify that repository-local authority, generic operating-model guardrails, domain ownership, and WebCodex-specific mechanics compose without duplication or contradiction;
+5. verify simple tasks remain simple and that no planner, worktree, PR, reviewer, subagent, ledger, or heavy evidence artifact is forced without concrete value;
+6. use the accepted source candidates without installing/updating ChatGPT account Skills; account-side installation and routing verification remain reserved for Phase H;
+7. persist Phase G evidence, findings/blockers, and the exact next action;
+8. stop without beginning Phase H.
