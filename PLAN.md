@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE C COMPLETE — PHASE D READY
+Status: PHASE D COMPLETE — PHASE E READY
 
 Completed:
 
@@ -610,11 +610,15 @@ Completed:
 - Phase B was integrated into `main` through PR #2, and the accepted Phase B evidence/governance is now part of the authoritative baseline for Phase C;
 - Phase C defined the `agent-operating-model` responsibility boundary, explicit non-goals, nine evidence-derived guardrails, positive/negative trigger contract, repository/domain/WebCodex composition contract, anti-ceremony checks, and Phase D implementation acceptance criteria;
 - Phase C design is persisted at `docs/design/2026-10-17-phase-c-lightweight-operating-model-design.md`;
-- Phase C found no blocker that would materially prevent Phase D.
+- Phase C found no blocker that would materially prevent Phase D;
+- Phase D implemented the minimal `agent-operating-model` Skill at `skill/agent-operating-model/` with only `SKILL.md` and `agents/openai.yaml`;
+- Phase D validated the Skill with the current Skill Creator validator/packager plus trigger, boundary, anti-ceremony, WebCodex-composition, domain-composition, and targeted-remediation checks;
+- Phase D validation is persisted at `docs/validation/2026-10-17-phase-d-skill-validation.md`;
+- validated `skill.zip` size is 3,133 bytes with SHA256 `7a0509a6792aadcd20fc8ce254d4dcb7124c51b02ac35c545939df0c18c540e9`;
+- Phase D found no blocker that would materially prevent Phase E.
 
 Not yet completed:
 
-- Skill implementation;
 - WebCodex Skill refactor;
 - integrated validation;
 - account installation/update.
@@ -652,20 +656,20 @@ Not yet completed:
 29. Phase C consolidates the generic operating model into nine decision guardrails, not a nine-step workflow: authority/current state, bounded objective/no invented gates, bounded search/reuse, proportional machinery, uncertain-outcome reconciliation, diagnosis/verification, conditional durable recovery, material-mutation authority, and ownership/composition.
 30. The generic Skill may co-activate with repository instructions, domain Skills, and `webcodex-project-driver`, but it must not duplicate their owned specifics or invent a universal host precedence hierarchy.
 31. Phase D should start from a minimal package shape — `SKILL.md` plus `agents/openai.yaml` — and add references/scripts/assets only if implementation evidence shows they materially improve reliability or context efficiency.
+32. Phase D accepted the minimal two-file package without supporting resources; pre-install routing/behavior validation passes, while account-side auto-invocation remains intentionally deferred to later integrated/account validation.
+33. The accepted Phase D package artifact is identified by SHA256 `7a0509a6792aadcd20fc8ce254d4dcb7124c51b02ac35c545939df0c18c540e9`; repository source plus validation evidence are authoritative for regeneration until account installation is explicitly authorized.
 
 ## Exact next action
 
-Execute **Phase D — Build Agent Operating Model Skill only**.
+Execute **Phase E — Slim WebCodex Project Driver only**.
 
 The next execution should:
 
-1. recover the accepted Phase C design from `main` rather than chat history;
-2. use the official Skill Creator flow to initialize `agent-operating-model`;
-3. implement the accepted trigger contract, nine guardrails, non-goals, and composition boundary in a compact `SKILL.md`;
-4. add required `agents/openai.yaml`;
-5. avoid scripts/references/assets unless they are demonstrably needed;
-6. validate positive triggers, negative triggers, boundary cases, WebCodex/domain composition, and representative behavior from the Phase C acceptance criteria;
-7. remove unused generated template files;
-8. validate and package the complete Skill as `skill.zip`;
-9. persist the accepted Phase D candidate and exact next action;
-10. stop without modifying `webcodex-project-driver`.
+1. recover the accepted Phase A responsibility matrix, Phase C ownership design, and Phase D generic Skill from `main`;
+2. verify the current live/authoritative `youzaizhihuiguan/webcodex-project-driver` source state before mutation;
+3. modify that Skill only in its own repository;
+4. remove, move, or narrow generic methodology now owned by `agent-operating-model` while preserving WebCodex-specific identity, freshness, recovery, runtime, resource, and evidence semantics;
+5. rewrite managed-worktree selection/reuse/cleanup policy using the Phase A disk evidence;
+6. validate/package the complete updated `webcodex-project-driver` Skill and preserve its existing Skill identity for later account update;
+7. link the accepted implementation commit and validation evidence back to this repository;
+8. stop without installing or updating any ChatGPT account Skill.
