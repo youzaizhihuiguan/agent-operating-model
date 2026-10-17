@@ -583,7 +583,7 @@ Because this repository is public, durable evidence must follow minimum-necessar
 
 ## Current state
 
-Status: PHASE D COMPLETE — PHASE E READY
+Status: PHASE E COMPLETE — PHASE F ASSESSMENT READY
 
 Completed:
 
@@ -615,12 +615,18 @@ Completed:
 - Phase D validated the Skill with the current Skill Creator validator/packager plus trigger, boundary, anti-ceremony, WebCodex-composition, domain-composition, and targeted-remediation checks;
 - Phase D validation is persisted at `docs/validation/2026-10-17-phase-d-skill-validation.md`;
 - validated `skill.zip` size is 3,133 bytes with SHA256 `7a0509a6792aadcd20fc8ce254d4dcb7124c51b02ac35c545939df0c18c540e9`;
-- Phase D found no blocker that would materially prevent Phase E.
+- Phase D found no blocker that would materially prevent Phase E;
+- Phase E refactored `youzaizhihuiguan/webcodex-project-driver` from verified baseline `82fd58e65e114a4878ef512c6f90093d1bb4046c` and integrated the accepted implementation at `0d41a941eb51533f004db60b3dfee33f72a3c0ae`;
+- Phase E narrowed `webcodex-project-driver` to WebCodex-specific identity, freshness, runtime, orchestration, placement, resource/scratch, wait/wake, cross-surface, recovery, and evidence semantics while delegating generic guardrails to project-local policy / `agent-operating-model`;
+- Phase E rewrote managed-worktree policy to default to an existing suitable checkout, require concrete isolation/concurrency/preservation value for new worktrees, prefer safe reuse, account separately for generated-output amplification, and use Git/WebCodex-aware terminal cleanup;
+- Phase E validation is persisted in the implementation repository at `docs/benchmark/2026-10-17-v0.3.2-operating-model-split-validation.md`;
+- the validated Phase E `webcodex-project-driver` package is 35,961 bytes with SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef`;
+- Phase E found no blocker that would materially prevent the conditional Phase F assessment.
 
 Not yet completed:
 
-- WebCodex Skill refactor;
-- integrated validation;
+- repository instruction contract assessment (Phase F, conditional);
+- integrated adversarial validation;
 - account installation/update.
 
 ## Current decision record
@@ -658,18 +664,19 @@ Not yet completed:
 31. Phase D should start from a minimal package shape — `SKILL.md` plus `agents/openai.yaml` — and add references/scripts/assets only if implementation evidence shows they materially improve reliability or context efficiency.
 32. Phase D accepted the minimal two-file package without supporting resources; pre-install routing/behavior validation passes, while account-side auto-invocation remains intentionally deferred to later integrated/account validation.
 33. The accepted Phase D package artifact is identified by SHA256 `7a0509a6792aadcd20fc8ce254d4dcb7124c51b02ac35c545939df0c18c540e9`; repository source plus validation evidence are authoritative for regeneration until account installation is explicitly authorized.
+34. Phase E accepted `webcodex-project-driver@0d41a941eb51533f004db60b3dfee33f72a3c0ae` as the repository baseline that composes with `agent-operating-model`; account installation remains unchanged until the later authorized installation stage.
+35. The accepted managed-worktree policy is: existing suitable checkout by default; new managed worktree only for concrete isolation/concurrency/preservation value; safe reuse before creation; generated-output amplification treated separately from Git metadata; terminal cleanup only after exact ownership/evidence/ref reconciliation.
+36. The accepted Phase E `webcodex-project-driver` package is identified by SHA256 `532f303e90ea690bae1e046f943f8e3bd0074eedf859e40499dc7a55736636ef` and validation evidence at `youzaizhihuiguan/webcodex-project-driver/docs/benchmark/2026-10-17-v0.3.2-operating-model-split-validation.md`.
 
 ## Exact next action
 
-Execute **Phase E — Slim WebCodex Project Driver only**.
+Execute **Phase F — Repository Instruction Contract assessment only (conditional)**.
 
 The next execution should:
 
-1. recover the accepted Phase A responsibility matrix, Phase C ownership design, and Phase D generic Skill from `main`;
-2. verify the current live/authoritative `youzaizhihuiguan/webcodex-project-driver` source state before mutation;
-3. modify that Skill only in its own repository;
-4. remove, move, or narrow generic methodology now owned by `agent-operating-model` while preserving WebCodex-specific identity, freshness, recovery, runtime, resource, and evidence semantics;
-5. rewrite managed-worktree selection/reuse/cleanup policy using the Phase A disk evidence;
-6. validate/package the complete updated `webcodex-project-driver` Skill and preserve its existing Skill identity for later account update;
-7. link the accepted implementation commit and validation evidence back to this repository;
-8. stop without installing or updating any ChatGPT account Skill.
+1. recover the accepted Phase C ownership/composition design and Phase E `webcodex-project-driver` split from `main`;
+2. inspect the current root `AGENTS.md`, `PLAN.md`, Skill composition contract, and repository-local instruction model for any remaining material gap;
+3. if no separate deliverable has material value, record **Phase F NOT NEEDED** with a short evidence-based rationale instead of manufacturing work;
+4. if a real gap remains, make only the smallest repository-instruction change needed to close it and verify stable policy remains separate from dynamic execution state;
+5. persist the Phase F verdict and exact next action;
+6. stop without starting Phase G integrated adversarial validation or installing/updating any ChatGPT account Skill.
