@@ -2,7 +2,7 @@
 
 Date: 2026-10-17
 
-Status: **DESIGN CANDIDATE — COMPLETE**
+Status: **ACCEPTED — PHASE C COMPLETE**
 
 This document defines the Phase C design contract for the future `agent-operating-model` Skill. It is a design artifact, not the Skill implementation.
 
@@ -385,12 +385,12 @@ No Phase E mutation occurs in Phase C.
 - positive/negative trigger contract explicit: **PASS**;
 - composition behavior explicit: **PASS**;
 - Phase D implementation acceptance criteria explicit: **PASS**;
-- design candidate persisted: **PASS once committed**.
+- accepted design persisted in the authoritative baseline: **PASS**.
 
 Known blocker that would materially prevent Phase D: **NONE**.
 
 ## 14. Exact next action
 
-After this design is accepted into the authoritative baseline, execute **Phase D — Build Agent Operating Model Skill only**.
+Execute **Phase D — Build Agent Operating Model Skill only**.
 
 Do not start Phase E in the same bounded objective.
