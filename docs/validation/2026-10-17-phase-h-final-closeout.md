@@ -1,5 +1,7 @@
 # Phase H — Final Closeout
 
+> **Post-closeout note (2026-10-17):** the `agent-operating-model` Skill was subsequently amended to add solution-selection handoff and execution-sized slicing. The Phase H AOM hashes below describe the historical pre-amendment closeout state. Current AOM source authority is `PLAN.md` plus `docs/validation/2026-10-17-post-closeout-search-first-execution-slicing-amendment.md`.
+
 Date: 2026-10-17
 
 Status: **PASS — SOURCE PROJECT CLOSED; ACCOUNT SKILL MUTATION NOT PERFORMED**
