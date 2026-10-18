@@ -649,6 +649,9 @@ Completed:
 - the user explicitly authorized a targeted trigger remediation on 2026-10-18;
 - scope is intentionally narrow: broaden only the Skill frontmatter `description` so substantive agentic execution is a positive trigger even when not framed as a formal project; preserve the existing nine guardrails, negative triggers, composition boundaries, and least-machinery behavior;
 - this is a targeted post-closeout remediation, not a new project phase.
+- targeted trigger remediation source commit is `56eba41d40ede00522af1010ae507213556ffd8e`; updated `SKILL.md` blob is `6c23c67cb81dae58a973cd59f8a893e7b3fedbb8`;
+- current Skill Creator validation/package PASS; packaged `skill.zip` is 3,666 bytes with SHA256 `70321bc5a0d903007878833803a94fa72b05a97e12490ac95eed12db5b965b0c`;
+- the remediation changed only the frontmatter trigger description; the activated guardrail body and `agents/openai.yaml` source remain unchanged.
 
 Optional external follow-on only:
 
@@ -706,18 +709,14 @@ Optional external follow-on only:
 
 ## Exact next action
 
-No project phase is reopened. Execute the authorized targeted trigger remediation:
+No project phase remains.
 
-1. broaden only the `agent-operating-model` frontmatter description so ordinary substantive Agent execution can auto-invoke the Skill even when the task is not framed as a formal project or technical project;
-2. preserve the existing guardrail body, negative-trigger exclusions, and composition boundaries;
-3. validate and package the complete Skill with the current Skill Creator flow;
-4. persist the accepted source commit/package identity and then, if the current environment exposes an official ChatGPT account Skill update surface, update the existing logical Skill identity and verify installed content/routing.
+The targeted trigger remediation is source-complete and validated. The source project remains closed.
 
-After that targeted remediation, the source project remains closed. The previously authorized account follow-on remains:
+Optional external follow-on only:
 
-1. install the post-closeout amended `agent-operating-model` Skill from Git blob `b1392ae06fc8f58d0125100d0588100ccd9d1c0c` / its validated package;
-2. update the existing `webcodex-project-driver` logical Skill identity to the accepted Phase E source;
-3. verify installed identities/content plus representative positive/negative routing and AOM/WPD composition;
-4. preserve the previous installed WPD revision as the account rollback target when the platform exposes revision history.
+1. update the existing ChatGPT account `agent-operating-model` logical Skill identity from the validated package/source above when an official account Skill-management interface is available;
+2. verify installed content plus representative daily-Agent positive routing and ordinary conversation/explanation negative routing;
+3. preserve the prior installed revision as rollback when the platform exposes revision history.
 
-Do not invent a Phase I or reopen completed source phases merely because account installation has not been performed.
+Do not create a duplicate Skill identity, substitute the WebCodex operator Skill store for the ChatGPT account Skill, or invent a new project phase.
